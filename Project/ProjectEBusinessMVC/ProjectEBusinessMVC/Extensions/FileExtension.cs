@@ -18,9 +18,8 @@ namespace ProjectEBusinessMVC.Extensions
                 }
                 resultPath = Path.Combine(resultPath, filename);
 
-                using (FileStream stream = new FileStream(filename, FileMode.Create))
+                using (FileStream stream = new FileStream(resultPath, FileMode.Create))
                 {
-
                     await file.CopyToAsync(stream);
                 }
 

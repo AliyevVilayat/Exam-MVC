@@ -15,3 +15,20 @@ C:\Users\ClassTime\source\repos\ProjectEBusinessMVC\ProjectEBusinessMVC.DataAcce
 C:\Users\ClassTime\source\repos\ProjectEBusinessMVC\ProjectEBusinessMVC.DataAccess\obj\Debug\net6.0\ref\ProjectEBusinessMVC.DataAccess.dll
 C:\Users\ClassTime\source\repos\ProjectEBusinessMVC\ProjectEBusinessMVC.DataAccess\bin\Debug\net6.0\ProjectEBusinessMVC.DataAccess.runtimeconfig.json
 C:\Users\ClassTime\source\repos\ProjectEBusinessMVC\ProjectEBusinessMVC.DataAccess\obj\Debug\net6.0\ProjectEBusinessMVC.DataAccess.genruntimeconfig.cache
+C:\Users\Vilayat Aliyev\OneDrive\Masaüstü\Exam-MVC\Project\ProjectEBusinessMVC\ProjectEBusinessMVC.DataAccess\bin\Debug\net6.0\ProjectEBusinessMVC.DataAccess.deps.json
+C:\Users\Vilayat Aliyev\OneDrive\Masaüstü\Exam-MVC\Project\ProjectEBusinessMVC\ProjectEBusinessMVC.DataAccess\bin\Debug\net6.0\ProjectEBusinessMVC.DataAccess.runtimeconfig.json
+C:\Users\Vilayat Aliyev\OneDrive\Masaüstü\Exam-MVC\Project\ProjectEBusinessMVC\ProjectEBusinessMVC.DataAccess\bin\Debug\net6.0\ProjectEBusinessMVC.DataAccess.dll
+C:\Users\Vilayat Aliyev\OneDrive\Masaüstü\Exam-MVC\Project\ProjectEBusinessMVC\ProjectEBusinessMVC.DataAccess\bin\Debug\net6.0\ProjectEBusinessMVC.DataAccess.pdb
+C:\Users\Vilayat Aliyev\OneDrive\Masaüstü\Exam-MVC\Project\ProjectEBusinessMVC\ProjectEBusinessMVC.DataAccess\bin\Debug\net6.0\ProjectEBusinessMVC.Core.dll
+C:\Users\Vilayat Aliyev\OneDrive\Masaüstü\Exam-MVC\Project\ProjectEBusinessMVC\ProjectEBusinessMVC.DataAccess\bin\Debug\net6.0\ProjectEBusinessMVC.Core.pdb
+C:\Users\Vilayat Aliyev\OneDrive\Masaüstü\Exam-MVC\Project\ProjectEBusinessMVC\ProjectEBusinessMVC.DataAccess\obj\Debug\net6.0\ProjectEBusinessMVC.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Vilayat Aliyev\OneDrive\Masaüstü\Exam-MVC\Project\ProjectEBusinessMVC\ProjectEBusinessMVC.DataAccess\obj\Debug\net6.0\ProjectEBusinessMVC.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vilayat Aliyev\OneDrive\Masaüstü\Exam-MVC\Project\ProjectEBusinessMVC\ProjectEBusinessMVC.DataAccess\obj\Debug\net6.0\ProjectEBusinessMVC.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Vilayat Aliyev\OneDrive\Masaüstü\Exam-MVC\Project\ProjectEBusinessMVC\ProjectEBusinessMVC.DataAccess\obj\Debug\net6.0\ProjectEBusinessMVC.DataAccess.AssemblyInfo.cs
+C:\Users\Vilayat Aliyev\OneDrive\Masaüstü\Exam-MVC\Project\ProjectEBusinessMVC\ProjectEBusinessMVC.DataAccess\obj\Debug\net6.0\ProjectEBusinessMVC.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Vilayat Aliyev\OneDrive\Masaüstü\Exam-MVC\Project\ProjectEBusinessMVC\ProjectEBusinessMVC.DataAccess\obj\Debug\net6.0\ProjectEBusinessMVC.DataAccess.csproj.CopyComplete
+C:\Users\Vilayat Aliyev\OneDrive\Masaüstü\Exam-MVC\Project\ProjectEBusinessMVC\ProjectEBusinessMVC.DataAccess\obj\Debug\net6.0\ProjectEBusinessMVC.DataAccess.dll
+C:\Users\Vilayat Aliyev\OneDrive\Masaüstü\Exam-MVC\Project\ProjectEBusinessMVC\ProjectEBusinessMVC.DataAccess\obj\Debug\net6.0\refint\ProjectEBusinessMVC.DataAccess.dll
+C:\Users\Vilayat Aliyev\OneDrive\Masaüstü\Exam-MVC\Project\ProjectEBusinessMVC\ProjectEBusinessMVC.DataAccess\obj\Debug\net6.0\ProjectEBusinessMVC.DataAccess.pdb
+C:\Users\Vilayat Aliyev\OneDrive\Masaüstü\Exam-MVC\Project\ProjectEBusinessMVC\ProjectEBusinessMVC.DataAccess\obj\Debug\net6.0\ProjectEBusinessMVC.DataAccess.genruntimeconfig.cache
+C:\Users\Vilayat Aliyev\OneDrive\Masaüstü\Exam-MVC\Project\ProjectEBusinessMVC\ProjectEBusinessMVC.DataAccess\obj\Debug\net6.0\ref\ProjectEBusinessMVC.DataAccess.dll

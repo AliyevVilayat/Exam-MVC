@@ -5,8 +5,9 @@ namespace ProjectEBusinessMVC.Areas.EBusinessVAdmin.ViewModels.SpecialTeam;
 public class SpecialTeamUpdateVM
 {
     public int Id { get; set; }
-    public string Img { get; set; }
+    public string? Img { get; set; }
     public IFormFile? ImgFile { get; set; }
+
     [Required, MaxLength(50, ErrorMessage = "The maximum length of an input Fullname can be 50")]
     public string? FullName { get; set; }
 

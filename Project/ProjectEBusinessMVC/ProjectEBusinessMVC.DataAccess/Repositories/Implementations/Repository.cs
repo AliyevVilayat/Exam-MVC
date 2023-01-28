@@ -41,7 +41,7 @@ public class Repository<T> : IRepository<T> where T : class, IEntity, new()
 
     public IQueryable<T> FindByCondition(Expression<Func<T, bool>> predicate)
     {
-        return _table.Where(predicate).AsQueryable();
+        return _table.Where(predicate).AsQueryable().AsNoTracking();
     }
 
     public async Task<T> FindById(int id)

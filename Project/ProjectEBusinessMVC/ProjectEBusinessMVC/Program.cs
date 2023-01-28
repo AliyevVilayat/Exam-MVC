@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using ProjectEBusinessMVC.Core.Entities;
 using ProjectEBusinessMVC.DataAccess.Contexts;
 using ProjectEBusinessMVC.DataAccess.Repositories.Implementations;
@@ -12,6 +13,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddAutoMapper(typeof(SpecialTeamMapper));
 
 builder.Services.AddScoped<ISpecialTeamRepository, SpecialTeamRepository>();
+builder.Services.AddScoped<AppDbContextInitializer>();
+
 
 string connectionString = builder.Configuration.GetConnectionString("Default");
 builder.Services.AddDbContext<AppDbContext>(opt =>
@@ -42,4 +45,18 @@ app.MapControllerRoute(
 app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();
+
+using (var scope = app.Services.CreateScope())
+{
+    var initializer = scope.ServiceProvider.GetRequiredService<AppDbContextInitializer>();
+    try
+    {
+        await initializer.InitializeAsync();
+        await initializer.CreateSpecialTeamAsync();
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
+}
 app.Run();

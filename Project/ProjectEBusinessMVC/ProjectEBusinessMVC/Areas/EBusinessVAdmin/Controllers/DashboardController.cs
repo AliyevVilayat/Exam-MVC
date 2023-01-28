@@ -21,7 +21,7 @@ namespace ProjectEBusinessMVC.Areas.EBusinessVAdmin.Controllers
         private readonly IMapper _mapper;
         private readonly IWebHostEnvironment _env;
 
-        public DashboardController(ISpecialTeamRepository specialTeamRepository, IMapper mapper, IWebHostEnvironment env,AppDbContext context)
+        public DashboardController(ISpecialTeamRepository specialTeamRepository, IMapper mapper, IWebHostEnvironment env, AppDbContext context)
         {
             _specialTeamRepository = specialTeamRepository;
             _mapper = mapper;
@@ -61,7 +61,7 @@ namespace ProjectEBusinessMVC.Areas.EBusinessVAdmin.Controllers
                     return View(specialTeamCreateVM);
                 }
 
-                string filename = await specialTeamCreateVM.Img.FileSaveAsync(_env.WebRootPath, "asstes", "img", "team");
+                string filename = await specialTeamCreateVM.Img.FileSaveAsync(_env.WebRootPath, "assets", "img", "team");
 
                 SpecialTeam specialTeam = _mapper.Map<SpecialTeam>(specialTeamCreateVM);
                 specialTeam.Img = filename;
@@ -90,7 +90,6 @@ namespace ProjectEBusinessMVC.Areas.EBusinessVAdmin.Controllers
             SpecialTeam specialTeam = await _specialTeamRepository.FindById(id);
             if (specialTeam is null) return NotFound();
             SpecialTeamUpdateVM specialTeamUpdateVM = _mapper.Map<SpecialTeamUpdateVM>(specialTeam);
-            ViewData["Img"] = specialTeam.Img;
             return View(specialTeamUpdateVM);
         }
 
@@ -101,7 +100,6 @@ namespace ProjectEBusinessMVC.Areas.EBusinessVAdmin.Controllers
 
             if (id != specialTeamUpdateVM.Id)
             {
-
                 return BadRequest();
             }
 
@@ -110,46 +108,41 @@ namespace ProjectEBusinessMVC.Areas.EBusinessVAdmin.Controllers
             {
                 return NotFound();
             }
-
+            specialTeamUpdateVM.Img = baseSpecialItem.Img;
             if (!ModelState.IsValid)
             {
-                ViewData["Img"] = baseSpecialItem.Img;
                 return View(specialTeamUpdateVM);
             }
 
-            string filename = string.Empty;
+
+            string filename = baseSpecialItem.Img;
             if (specialTeamUpdateVM.ImgFile is not null)
             {
-                filename = await specialTeamUpdateVM.ImgFile.FileSaveAsync(_env.WebRootPath, "asstes", "img", "team");
-            }
-            SpecialTeam specialTeam = _mapper.Map<SpecialTeam>(specialTeamUpdateVM);
-            if (baseSpecialItem.Img != null)
-            {
-                specialTeam.Img = filename;
-            }
-            else
-            {
-                specialTeam.Img = baseSpecialItem.Img;
+                filename = await specialTeamUpdateVM.ImgFile.FileSaveAsync(_env.WebRootPath, "assets", "img", "team");
             }
 
+            SpecialTeam specialTeam = _mapper.Map<SpecialTeam>(specialTeamUpdateVM);
+            specialTeam.Img = filename;
+
             _specialTeamRepository.Update(specialTeam);
+            await _specialTeamRepository.SaveAsync();
 
             return RedirectToAction(nameof(Index));
         }
 
         public async Task<IActionResult> Delete(int id)
         {
-            
+
             SpecialTeam specialTeam = await _specialTeamRepository.FindById(id);
-            if (specialTeam is null) return NotFound();       
-            if(await _context.SpecialTeams.CountAsync() <= 2)
+            if (specialTeam is null) return NotFound();
+            if (await _context.SpecialTeams.CountAsync() <= 2)
             {
                 TempData["DeleteMinRequired"] = "2 - den az melumat olduqda silmek olmaz";
                 return RedirectToAction(nameof(Index));
             }
-            SpecialTeamUpdateVM specialTeamUpdateVM = _mapper.Map<SpecialTeamUpdateVM>(specialTeam);
+            SpecialTeamDeleteVM specialTeamDeleteVM = _mapper.Map<SpecialTeamDeleteVM>(specialTeam);
             ViewData["Img"] = specialTeam.Img;
-            return View(specialTeamUpdateVM);
+            return View(specialTeamDeleteVM);
         }
 
         [HttpPost]
@@ -157,27 +150,22 @@ namespace ProjectEBusinessMVC.Areas.EBusinessVAdmin.Controllers
         [ActionName("Delete")]
         public async Task<IActionResult> DeletePost(SpecialTeamDeleteVM specialTeamDeleteVM)
         {
-
-            SpecialTeam specialTeam = _mapper.Map<SpecialTeam>(specialTeamDeleteVM);
-
             try
             {
+                SpecialTeam specialTeam = await _specialTeamRepository.FindById(specialTeamDeleteVM.Id);
+
                 if (System.IO.File.Exists(specialTeam.Img))
                 {
                     System.IO.File.Delete(specialTeam.Img);
                 }
                 _specialTeamRepository.Delete(specialTeam);
+                await _specialTeamRepository.SaveAsync();
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
-
                 return Content(ex.Message);
             }
-            
-            
         }
-
-
     }
 }

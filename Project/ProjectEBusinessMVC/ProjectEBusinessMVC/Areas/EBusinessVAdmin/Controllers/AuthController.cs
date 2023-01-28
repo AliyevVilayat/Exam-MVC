@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using ProjectEBusinessMVC.Areas.EBusinessVAdmin.ViewModels.Account;
 using ProjectEBusinessMVC.Core.Entities;
 
 namespace ProjectEBusinessMVC.Areas.EBusinessVAdmin.Controllers
@@ -7,7 +8,7 @@ namespace ProjectEBusinessMVC.Areas.EBusinessVAdmin.Controllers
     public class AuthController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
-        private readonly SignInManager<AppUser> signInManager;
+        private readonly SignInManager<AppUser> _signInManager;
 
 
         private readonly RoleManager<IdentityRole> _roleManager;
@@ -15,7 +16,7 @@ namespace ProjectEBusinessMVC.Areas.EBusinessVAdmin.Controllers
         {
             _userManager = userManager;
             _roleManager = roleManager;
-            this.signInManager = signInManager;
+            _signInManager = signInManager;
         }
 
         public IActionResult Index()
@@ -26,7 +27,7 @@ namespace ProjectEBusinessMVC.Areas.EBusinessVAdmin.Controllers
         public IActionResult Register(RegisterVM registerVM)
         {
 
-
+            return View();
         }
     }
 }
