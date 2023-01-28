@@ -1,0 +1,53 @@
+﻿@using ProjectEBusinessMVC.Areas.EBusinessVAdmin.ViewModels.SpecialTeam
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@model IndexVM
+
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-secondary text-center rounded p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h6 class="mb-0">Special Teams</h6>
+            <a asp-action="Create">Create Special Team Member</a>
+        </div>
+        <span class="alert-danger">@TempData["DeleteMinRequired"]</span>
+        <div class="table-responsive">
+            <table class="table text-start align-middle table-hover mb-0">
+                <thead>
+                    <tr class="text-white">
+                        <th scope="col">Image</th>
+                        <th scope="col">FullName</th>
+                        <th scope="col">Position</th>
+                        <th scope="col">Facebook Link</th>
+                        <th scope="col">Twitter Link</th>
+                        <th scope="col">Instragram Link</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var specialTeamIndexVM in Model.SpecialTeamIndexVMs)
+                    {
+                        <tr>
+                            <td><img class="rounded-circle" src="~/assets/img/team/@specialTeamIndexVM.Img" alt="" style="width: 40px; height: 40px;"></td>
+                            <td>@specialTeamIndexVM.FullName</td>
+                            <td>@specialTeamIndexVM.Position</td>
+                            <td>@specialTeamIndexVM.FacebookSM</td>
+                            <td>@specialTeamIndexVM.TwitterSM</td>
+                            <td>@specialTeamIndexVM.InstagramSM</td>
+                            <td>
+                                <a class="btn btn-sm btn-info" asp-action="Detail" asp-route-id="@specialTeamIndexVM.Id">Detail</a>
+                                <a class="btn btn-sm btn-warning" asp-action="Update" asp-route-id="@specialTeamIndexVM.Id" style="color:white;">Update</a>
+                                <a class="btn btn-sm btn-danger " asp-action="Delete" asp-route-id="@specialTeamIndexVM.Id">Delete</a>
+
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

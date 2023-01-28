@@ -1,0 +1,51 @@
+﻿@using ProjectEBusinessMVC.Core.Entities
+
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+@model SpecialTeam
+
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-secondary text-center rounded p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h6 class="mb-0">Special Teams</h6>
+            <a asp-action="Index">Back to Special Teams page</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table text-start align-middle table-hover mb-0">
+                <thead>
+                    <tr class="text-white">
+                        <th scope="col">Image</th>  
+                        <th scope="col">ID</th>  
+                        <th scope="col">FullName</th>
+                        <th scope="col">Position</th>
+                        <th scope="col">Facebook Link</th>
+                        <th scope="col">Twitter Link</th>
+                        <th scope="col">Instragram Link</th>
+                        <th scope="col">IsDeleted</th>
+                        <th scope="col">Last Updated Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><img class="rounded-circle" src="~/assets/img/team/@Model.Img" alt="" style="width: 40px; height: 40px;"></td>
+                        <td>@Model.Id</td>
+                        <td>@Model.FullName</td>
+                        <td>@Model.Position</td>
+                        <td>@Model.FacebookSM</td>
+                        <td>@Model.TwitterSM</td>
+                        <td>@Model.InstagramSM</td>
+                        <td>@Model.IsDeleted</td>
+                        <td>@Model.UpdatedTime</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

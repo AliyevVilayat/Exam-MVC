@@ -1,0 +1,59 @@
+﻿@using ProjectEBusinessMVC.Areas.EBusinessVAdmin.ViewModels.SpecialTeam
+
+@{
+    ViewData["Title"] = "Create";
+}
+@model SpecialTeamCreateVM
+
+<!-- Form Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Special Team Add Member Form</h6>
+                <form method="post" enctype="multipart/form-data">
+
+                    <div class="mb-3">
+                        <label for="fullname" class="form-label">Fullname</label>
+                        <input class="form-control" asp-for="@Model.FullName">
+                        <span class="alert-danger" asp-validation-for="@Model.FullName"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Position</label>
+                        <input class="form-control" asp-for="@Model.Position">
+                        <span class="alert-danger" asp-validation-for="@Model.Position"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="fullname" class="form-label">Facebook Link</label>
+                        <input class="form-control" asp-for="@Model.FacebookSM">
+                        <span class="alert-danger" asp-validation-for="@Model.FacebookSM"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Twitter Link</label>
+                        <input class="form-control" asp-for="@Model.TwitterSM">
+                        <span class="alert-danger" asp-validation-for="@Model.TwitterSM"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Instagram Link</label>
+                        <input class="form-control" asp-for="@Model.InstagramSM">
+                        <span class="alert-danger" asp-validation-for="@Model.InstagramSM"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Img</label>
+                        <input class="form-control" asp-for="@Model.Img" accept="image/*">
+                        <span class="alert-danger" asp-validation-for="@Model.Img"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    <a asp-action="Index" class="btn btn-light">Go Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Form End -->
